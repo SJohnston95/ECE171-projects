@@ -1,0 +1,32 @@
+module Compare8Bit (A, B, IEQ, ILT, IGT, OEQ, OLT, OGT);
+input [7:0] A, B;
+input IEQ, ILT, IGT;
+output OEQ, OLT, OGT; 
+wire I1, I2, I3, I4, I5, I6,I7,I8,I9;
+
+program A1 (A[7:6],B[7:6],IEQ,ILT,IGT,I1,I2,I3);
+program A2 (A[5:4],B[5:4],I1,I2,I3,I4,I5,I6);
+program A3 (A[3:2],B[3:2],I4,I5,I6,I7,I8,I9);
+program A4 (A[1:0],B[1:0],I7,I8,I9,OEQ,OLT,OGT);
+
+endmodule
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+/////////////As requested, the files are placed into a single program
+module program (A,B, IEQ, ILT, IGT, OEQ, OLT, OGT);
+input [1:0] A,B;
+input IEQ, ILT, IGT;
+output OEQ, OLT, OGT;
+assign #6 OGT = IGT|(IEQ&((~B[0]&~B[1]&A[1])|(~B[1]&A[1])|(~B[0]&A[0]&A[1])));
+
+assign #6 OEQ = (IEQ)&(~B[0]&~B[1]&~A[0]&~A[1]) 
+| (~B[1]&B[0]&~A[1]&A[0])
+|(A[0]&A[1]&B[1]&B[0])
+|(A[1]&~A[0]&B[1]&~B[0]);
+
+assign OLT = (ILT)|(IEQ&(~OGT & ~OEQ));
+
+endmodule

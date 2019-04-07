@@ -1,0 +1,21 @@
+Log File Generated: 5/7/2018 10:09:03 AM
+
+[Beginning Verilog MUT preparse]
+Working directory: C:\Users\Stephen Johnston\Desktop\School Stuff\Quarter 1\ECE 171\project 2\Project2
+Program arguments:
+ simx  -y .\lib\verilog -y .\lib  +incdir+.\  +libext+.v+.vo  +typdelays  C:\Users\Stephen Johnston\Desktop\School Stuff\Quarter 1\ECE 171\project 2\Project2\Maindataflow.v C:\Users\Stephen Johnston\Desktop\School Stuff\Quarter 1\ECE 171\project 2\Project2\Maintestbench.v
+SynaptiCAD VHDL/Verilog simulator rev. 45598.20072.
+Running in unlicensed evaluation mode.
+vlog_a: Note: Analyzing...
+vlog_a: Note: Maindataflow.v
+vlog_a: Note: Maintestbench.v
+vlog_a: Note: Parsing success. 0 error(s), 0 warning(s)
+[Verilog MUT preparse complete]
+
+Working directory: "C:\Users\Stephen Johnston\Desktop\School Stuff\Quarter 1\ECE 171\project 2\Project2\"
+Executable file:   C:\SynaptiCAD\bin\win32\simx32.exe
+Program arguments:
+ C:\SynaptiCAD\bin\win32\simx32.exe +libext+.v+.vo +loadpli1=syncadverilogx.dll --scd_nosim +timescale+1ns/1ps --scd_top Compare8BitTest +linedebug +incdir+. -y lib/verilog -y lib
+SynaptiCAD VHDL/Verilog simulator rev. 45598.20072.
+SL-1: Failed to check out the license for the Extreme simulator
+Process exited with code 8.
